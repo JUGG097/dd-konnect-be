@@ -1,4 +1,4 @@
-import mongoose, { Document, Number, RefType } from "mongoose";
+import mongoose, { Document, RefType } from "mongoose";
 
 export interface UserDocument extends Document {
 	name: string;
@@ -16,7 +16,6 @@ export interface DesignDocument extends Document {
 	title: string;
 	description: string;
 	thumbnails: Array<RefType>;
-	likes: Number;
 	createdAt: Date;
 	updatedAt: Date;
 }
@@ -27,6 +26,26 @@ export interface SubmissionDocument extends Document {
 	title: string;
 	githubLink: string;
 	hostLink: string;
+	createdAt: Date;
+	updatedAt: Date;
+}
+
+export interface ImageDocument extends Document {
+	imageUrl: string;
+	createdAt: Date;
+	updatedAt: Date;
+}
+
+export interface AttemptDocument extends Document {
+	user: RefType;
+	design: RefType;
+	createdAt: Date;
+	updatedAt: Date;
+}
+
+export interface LikeDocument extends Document {
+	user: RefType;
+	design: RefType;
 	createdAt: Date;
 	updatedAt: Date;
 }

@@ -21,10 +21,6 @@ const designSchema = new mongoose.Schema(
 				ref: "Image",
 			},
 		],
-		likes: {
-			type: Number,
-			default: 0,
-		},
 	},
 	{
 		timestamps: true,
